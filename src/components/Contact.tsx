@@ -3,17 +3,13 @@
 import { motion } from 'framer-motion';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Copy, Phone } from 'lucide-react';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Contact = () => {
   const { toast } = useToast();
   const email = "harshthakorwork@gmail.com";
   const phone = "+91 99749 05539";
+  
+  const emailHref = `mailto:${email}`;
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
@@ -87,34 +83,17 @@ const Contact = () => {
           >
             {/* Email Option */}
             <div className="flex flex-col items-center gap-6 w-full sm:w-auto">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <motion.button
-                    className="flex items-center justify-center gap-3 px-10 py-4 rounded-full border-2 border-primary text-foreground hover:bg-primary/5 transition-all duration-300 group w-full sm:w-auto outline-none"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Mail className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
-                    <span className="text-xl font-medium tracking-tight">Email</span>
-                  </motion.button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="center" className="w-56 p-2 rounded-xl border-primary/20 bg-background/95 backdrop-blur-md shadow-xl z-50">
-                  <DropdownMenuItem asChild className="cursor-pointer rounded-lg px-3 py-2.5 hover:bg-primary/10 focus:bg-primary/10 transition-colors">
-                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`} target="_blank" rel="noopener noreferrer" className="flex items-center w-full outline-none">
-                      <Mail className="w-4 h-4 mr-3 text-primary" />
-                      <span className="font-medium">Open in Gmail (Web)</span>
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild className="cursor-pointer rounded-lg px-3 py-2.5 hover:bg-primary/10 focus:bg-primary/10 transition-colors mt-1">
-                    <a href={`mailto:${email}`} className="flex items-center w-full outline-none">
-                      <svg className="w-4 h-4 mr-3 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      <span className="font-medium">Open Default App</span>
-                    </a>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <motion.a
+                href={emailHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 px-10 py-4 rounded-full border-2 border-primary text-foreground hover:bg-primary/5 transition-all duration-300 group w-full sm:w-auto"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Mail className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-xl font-medium tracking-tight">Email</span>
+              </motion.a>
 
               <button
                 onClick={() => copyToClipboard(email, "Email")}
