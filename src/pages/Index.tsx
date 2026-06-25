@@ -53,7 +53,7 @@ const Index = () => {
         <div className="fixed top-[20%] right-[-10%] w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] rounded-full bg-emerald-400/30 dark:bg-teal-500/10 blur-[80px] md:blur-[150px] z-[-3] animate-pulse mix-blend-multiply dark:mix-blend-screen" style={{ animationDuration: '10s', animationDelay: '5s' }} />
         
         {/* Heavy Noise Overlay for Lo-Fi Texture */}
-        <div className="fixed inset-0 z-[-1] opacity-[0.15] dark:opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }} />
+        <div className="fixed inset-0 z-[-1] opacity-[0.12] dark:opacity-[0.06] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }} />
 
         <Navbar />
         <main className="relative z-10">
