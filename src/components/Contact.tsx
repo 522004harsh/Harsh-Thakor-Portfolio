@@ -1,15 +1,28 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Copy } from 'lucide-react';
+import { Mail, Copy, Phone } from 'lucide-react';
 
 const Contact = () => {
   const { toast } = useToast();
   const email = "harshthakorwork@gmail.com";
+  const phone = "+91 99749 05539";
+  
+  const [isMobile, setIsMobile] = useState(false);
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText(email);
+  useEffect(() => {
+    // Detect if the user is on a mobile device
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+  }, []);
+
+  const emailHref = isMobile 
+    ? `mailto:${email}` 
+    : `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+
+  const copyToClipboard = (text: string, type: string) => {
+    navigator.clipboard.writeText(text);
     toast({
       description: (
         <div className="flex items-center gap-3">
@@ -18,7 +31,7 @@ const Contact = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <span className="font-medium">Email Copied to Clipboard</span>
+          <span className="font-medium">{type} Copied to Clipboard</span>
         </div>
       ),
     });
@@ -76,15 +89,15 @@ const Contact = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col items-center gap-8"
+            className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16"
           >
-            <div className="flex flex-col items-center gap-6">
-              {/* Main Email Button (Pill shape like the image) */}
+            {/* Email Option */}
+            <div className="flex flex-col items-center gap-6 w-full sm:w-auto">
               <motion.a
-                href={`mailto:${email}`}
+                href={emailHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-10 py-4 rounded-full border-2 border-primary text-foreground hover:bg-primary/5 transition-all duration-300 group"
+                className="flex items-center justify-center gap-3 px-10 py-4 rounded-full border-2 border-primary text-foreground hover:bg-primary/5 transition-all duration-300 group w-full sm:w-auto"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -92,13 +105,33 @@ const Contact = () => {
                 <span className="text-xl font-medium tracking-tight">Email</span>
               </motion.a>
 
-              {/* Subtle Copy Option */}
               <button
-                onClick={copyEmail}
+                onClick={() => copyToClipboard(email, "Email")}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 opacity-60 hover:opacity-100"
               >
                 <Copy className="w-3.5 h-3.5" />
                 <span>Copy email</span>
+              </button>
+            </div>
+
+            {/* Phone Option */}
+            <div className="flex flex-col items-center gap-6 w-full sm:w-auto">
+              <motion.a
+                href={`tel:${phone.replace(/\s+/g, '')}`}
+                className="flex items-center justify-center gap-3 px-10 py-4 rounded-full border-2 border-primary text-foreground hover:bg-primary/5 transition-all duration-300 group w-full sm:w-auto"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Phone className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-xl font-medium tracking-tight">Call</span>
+              </motion.a>
+
+              <button
+                onClick={() => copyToClipboard(phone, "Phone Number")}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 opacity-60 hover:opacity-100"
+              >
+                <Copy className="w-3.5 h-3.5" />
+                <span>Copy number</span>
               </button>
             </div>
           </motion.div>
