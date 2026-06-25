@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Copy, Phone } from 'lucide-react';
@@ -10,16 +9,7 @@ const Contact = () => {
   const email = "harshthakorwork@gmail.com";
   const phone = "+91 99749 05539";
   
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Detect if the user is on a mobile device
-    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
-  }, []);
-
-  const emailHref = isMobile 
-    ? `mailto:${email}` 
-    : `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+  const emailHref = `mailto:${email}`;
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text);

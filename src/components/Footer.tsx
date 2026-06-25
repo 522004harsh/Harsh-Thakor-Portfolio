@@ -1,21 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const email = "harshthakorwork@gmail.com";
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
-  }, []);
-
-  const emailHref = isMobile 
-    ? `mailto:${email}` 
-    : `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+  const emailHref = "mailto:harshthakorwork@gmail.com";
 
   return (
     <motion.footer
