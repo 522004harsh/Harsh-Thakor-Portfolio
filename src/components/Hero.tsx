@@ -7,10 +7,10 @@ const Hero = () => {
   return (
     <section className="min-h-[85vh] flex flex-col justify-end pb-16 md:pb-24 relative overflow-hidden pt-32">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-12 relative">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-12 relative">
           
           {/* Main Typography Area */}
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
+          <div className="max-w-xl md:max-w-2xl lg:max-w-3xl space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -44,17 +44,17 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="inline-flex flex-col sm:flex-row items-center p-1.5 rounded-3xl sm:rounded-full bg-background/50 backdrop-blur-md border border-border shadow-sm w-fit"
+              className="inline-flex flex-row items-center p-1.5 rounded-full bg-background/50 backdrop-blur-md border border-border shadow-sm w-fit"
             >
               <button 
                 onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full sm:w-auto bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                className="w-auto bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors text-sm sm:text-base whitespace-nowrap"
               >
                 View Work
               </button>
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full sm:w-auto px-8 py-4 font-medium hover:text-primary transition-colors text-foreground text-center"
+                className="w-auto px-6 sm:px-8 py-3 sm:py-4 font-medium hover:text-primary transition-colors text-foreground text-center text-sm sm:text-base whitespace-nowrap"
               >
                 Contact Me
               </button>
@@ -66,7 +66,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative w-full max-w-sm md:max-w-md mx-auto lg:mx-0 mt-12 lg:mt-0"
+            className="relative w-full max-w-sm md:max-w-md mx-auto md:mx-0 mt-12 md:mt-0"
           >
             <motion.div 
               animate={{ 

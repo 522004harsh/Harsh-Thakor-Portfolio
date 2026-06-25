@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Social icons */}
           <div className="flex items-center gap-4">
             <motion.a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=harshthakorwork@gmail.com"
+              href="mailto:harshthakorwork@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-10 h-10 rounded-full border-2 border-primary/30 hover:border-primary flex items-center justify-center overflow-hidden text-foreground hover:text-primary-foreground transition-colors duration-300"

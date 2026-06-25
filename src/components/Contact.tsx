@@ -81,7 +81,7 @@ const Contact = () => {
             <div className="flex flex-col items-center gap-6">
               {/* Main Email Button (Pill shape like the image) */}
               <motion.a
-                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
+                href={`mailto:${email}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-10 py-4 rounded-full border-2 border-primary text-foreground hover:bg-primary/5 transition-all duration-300 group"
