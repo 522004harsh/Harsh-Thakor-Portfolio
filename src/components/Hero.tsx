@@ -5,7 +5,7 @@ import profileImage from '@/assets/profile.jpeg';
 
 const Hero = () => {
   return (
-    <section className="min-h-[85vh] flex flex-col justify-end pb-16 md:pb-24 relative overflow-hidden pt-32">
+    <section className="min-h-[85vh] flex flex-col justify-center pb-8 pt-24 md:pt-32 relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-12 relative">
           
