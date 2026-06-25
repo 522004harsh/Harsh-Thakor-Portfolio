@@ -1,10 +1,21 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const email = "harshthakorwork@gmail.com";
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+  }, []);
+
+  const emailHref = isMobile 
+    ? `mailto:${email}` 
+    : `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
 
   return (
     <motion.footer
@@ -19,7 +30,7 @@ const Footer = () => {
           {/* Social icons */}
           <div className="flex items-center gap-4">
             <motion.a
-              href="mailto:harshthakorwork@gmail.com"
+              href={emailHref}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-10 h-10 rounded-full border-2 border-primary/30 hover:border-primary flex items-center justify-center overflow-hidden text-foreground hover:text-primary-foreground transition-colors duration-300"
