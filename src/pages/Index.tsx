@@ -39,8 +39,8 @@ const Index = () => {
         {/* Deep Solid Background */}
         <div className="fixed inset-0 z-[-4] bg-zinc-50 dark:bg-[#030505] transition-colors duration-700" />
         
-        {/* Soft Single Cursor Glow */}
-        <div className="pointer-events-none fixed inset-0 z-[-2] overflow-hidden mix-blend-multiply dark:mix-blend-screen opacity-40 dark:opacity-30">
+        {/* Soft Single Cursor Glow - Hidden on mobile because there is no cursor */}
+        <div className="hidden md:block pointer-events-none fixed inset-0 z-[-2] overflow-hidden mix-blend-multiply dark:mix-blend-screen opacity-40 dark:opacity-30">
           <motion.div
             className="absolute top-0 left-0 w-[150px] h-[150px] rounded-full bg-[#00BFA6] blur-[50px]"
             style={{ x: springX, y: springY, translateX: '-50%', translateY: '-50%' }}
