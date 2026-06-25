@@ -44,7 +44,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="inline-flex flex-col sm:flex-row items-center p-1.5 rounded-full bg-background/50 backdrop-blur-md border border-border shadow-sm w-fit"
+              className="inline-flex flex-col sm:flex-row items-center p-1.5 rounded-3xl sm:rounded-full bg-background/50 backdrop-blur-md border border-border shadow-sm w-fit"
             >
               <button 
                 onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}

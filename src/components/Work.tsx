@@ -126,7 +126,7 @@ const Work = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-7xl md:text-9xl font-black text-foreground/[0.03] uppercase tracking-widest whitespace-nowrap"
+              className="text-5xl md:text-9xl font-black text-foreground/[0.03] uppercase tracking-widest whitespace-nowrap"
             >
               PORTFOLIO
             </motion.h2>
@@ -139,11 +139,11 @@ const Work = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative z-10 flex items-center justify-center gap-4"
           >
-            <div className="w-12 md:w-24 h-[1px] bg-gradient-to-r from-transparent to-primary"></div>
+            <div className="w-8 md:w-24 h-[1px] bg-gradient-to-r from-transparent to-primary"></div>
             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest text-foreground">
               Port<span className="text-primary">folio</span>
             </h2>
-            <div className="w-12 md:w-24 h-[1px] bg-gradient-to-l from-transparent to-primary"></div>
+            <div className="w-8 md:w-24 h-[1px] bg-gradient-to-l from-transparent to-primary"></div>
           </motion.div>
         </div>
 

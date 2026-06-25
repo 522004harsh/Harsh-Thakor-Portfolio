@@ -78,7 +78,7 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-7xl md:text-9xl font-black text-foreground/[0.03] uppercase tracking-widest whitespace-nowrap"
+              className="text-5xl md:text-9xl font-black text-foreground/[0.03] uppercase tracking-widest whitespace-nowrap"
             >
               ABOUT ME
             </motion.h2>
@@ -91,11 +91,11 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative z-10 flex items-center justify-center gap-4"
           >
-            <div className="w-12 md:w-24 h-[1px] bg-gradient-to-r from-transparent to-primary"></div>
+            <div className="w-8 md:w-24 h-[1px] bg-gradient-to-r from-transparent to-primary"></div>
             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest text-foreground">
               About <span className="text-primary">Me</span>
             </h2>
-            <div className="w-12 md:w-24 h-[1px] bg-gradient-to-l from-transparent to-primary"></div>
+            <div className="w-8 md:w-24 h-[1px] bg-gradient-to-l from-transparent to-primary"></div>
           </motion.div>
         </div>
 
@@ -114,7 +114,7 @@ const About = () => {
               <span className="text-muted-foreground">Strategic Thinker.</span>
             </h2>
             
-            <p className="text-lg text-muted-foreground leading-relaxed text-center">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light text-left md:text-center">
               Aspiring Business Analyst and Computer Science Engineering graduate with a specialization in AI/ML. Practical experience in business process analysis, requirement gathering, Python automation, web development, and business intelligence tools. Skilled in workflow optimization, documentation, dashboarding, and building data-driven solutions through internships and projects. Hands-on exposure to Excel, Power BI, Power Apps, and MS SQL for reporting, workflow automation, and decision support. Smart India Hackathon 2024 Finalist with strong analytical thinking, stakeholder understanding, and problem-solving capabilities.
             </p>
 
@@ -173,7 +173,7 @@ const About = () => {
                   <div className="w-1.5 h-1.5 rounded-full bg-primary opacity-80" />
                   {group.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm font-light">
+                <p className="text-foreground/90 leading-relaxed text-sm font-light">
                   {group.skills.join(', ')}
                 </p>
               </motion.div>
@@ -207,7 +207,7 @@ const About = () => {
                   <div className="w-1.5 h-1.5 rounded-full bg-primary opacity-80" />
                   {service.title}
                 </h4>
-                <p className="text-muted-foreground leading-relaxed font-light">{service.description}</p>
+                <p className="text-foreground/90 leading-relaxed font-light">{service.description}</p>
               </motion.div>
             ))}
           </div>

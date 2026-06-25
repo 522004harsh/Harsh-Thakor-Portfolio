@@ -115,8 +115,8 @@ const Navbar = () => {
 
       {/* Floating Side Navigation - shown after scrolling past hero */}
       {showSideNav && (
-        <nav className="fixed right-4 md:right-6 top-1/2 -translate-y-1/2 z-50">
-          <div className="flex flex-col items-center gap-1 md:gap-2 px-1.5 md:px-2.5 py-3 md:py-4 bg-background border border-primary rounded-full shadow-lg">
+        <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 md:right-6 md:top-1/2 md:-translate-y-1/2 md:left-auto md:bottom-auto md:translate-x-0 z-50">
+          <div className="flex flex-row md:flex-col items-center gap-2 md:gap-2 px-4 py-2 md:px-2.5 md:py-4 bg-background border border-primary rounded-full shadow-lg">
             {sideNavLinks.map((link) => {
               const isActive = activeSection === link.section || (link.section === '' && activeSection === '');
               return (
