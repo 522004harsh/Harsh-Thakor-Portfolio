@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, type Variants } from 'framer-motion';
-import { MapPin } from 'lucide-react';
+import { MapPin, GraduationCap } from 'lucide-react';
 
 const skillGroups = [
   {
